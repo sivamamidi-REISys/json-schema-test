@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "title": "Form 4",
+  "properties": {
+    "program": {
+      "type": "object",
+      "properties": {
+        "programeId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "programName": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "programeId",
+        "programName"
+      ]
+    },
+    "grantee": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "form4": {
+      "type": "object",
+      "properties": {
+        "sectionA": {
+          "type": "object",
+          "properties": {
+            "programCapacity": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "houseHoldsEnrolled",
+                      "continueHouseHolds",
+                      "caseLoad",
+                      "maxServiceCapacity",
+                      "capacityPercentage"
+                    ],
+                    "properties": {
+                      "houseHoldsEnrolled": {
+                        "type": "number"
+                      },
+                      "continueHouseHolds": {
+                        "type": "number"
+                      },
+                      "caseLoad": {
+                        "type": "number"
+                      },
+                      "maxServiceCapacity": {
+                        "type": "number"
+                      },
+                      "capacityPercentage": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "items"
+              ]
+            },
+            "placeBasedServices": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "community",
+                      "houseHoldsServed"
+                    ],
+                    "properties": {
+                      "community": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "zipCodes": {
+                        "type": "array",
+                        "items": {
+                          "required": [],
+                          "properties": {}
+                        }
+                      },
+                      "houseHoldsServed": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                },
+                "total": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "items",
+                "total"
+              ]
+            },
+            "familyEngagement": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "houseHoldsReceivingServices",
+                      "houseHoldsCompletedProgram",
+                      "houseHoldsStoppedServices",
+                      "other",
+                      "total",
+                      "totalInPercentage"
+                    ],
+                    "properties": {
+                      "houseHoldsReceivingServices": {
+                        "type": "number"
+                      },
+                      "houseHoldsCompletedProgram": {
+                        "type": "number"
+                      },
+                      "houseHoldsStoppedServices": {
+                        "type": "number"
+                      },
+                      "other": {
+                        "type": "number"
+                      },
+                      "total": {
+                        "type": "number"
+                      },
+                      "totalInPercentage": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "items"
+              ]
+            }
+          },
+          "required": [
+            "programCapacity",
+            "placeBasedServices",
+            "familyEngagement"
+          ]
+        },
+        "sectionB": {
+          "type": "object",
+          "properties": {
+            "benchMarkArea1": {
+              "type": "object",
+              "properties": {
+                "measures": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "constructName",
+                      "measureName",
+                      "numerator",
+                      "denominator",
+                      "percentage"
+                    ],
+                    "properties": {
+                      "constructName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "measureName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "numerator": {
+                        "type": "number"
+                      },
+                      "denominator": {
+                        "type": "number"
+                      },
+                      "percentage": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "measures"
+              ]
+            },
+            "benchMarkArea2": {
+              "type": "object",
+              "properties": {
+                "measures": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "constructName",
+                      "measureName",
+                      "numerator",
+                      "denominator",
+                      "percentage"
+                    ],
+                    "properties": {
+                      "constructName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "measureName": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "numerator": {
+                        "type": "number"
+                      },
+                      "denominator": {
+                        "type": "number"
+                      },
+                      "percentage": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "measures"
+              ]
+            }
+          },
+          "required": [
+            "benchMarkArea1",
+            "benchMarkArea2"
+          ]
+        }
+      },
+      "required": [
+        "sectionA",
+        "sectionB"
+      ]
+    }
+  },
+  "required": [
+    "program",
+    "grantee",
+    "form4"
+  ]
+}
